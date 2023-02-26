@@ -16,11 +16,10 @@ public class Application {
 	}
 
 	@Bean
-	CommandLineRunner datRunner(TodoListRepository repository) {
+	public CommandLineRunner datRunner(TodoListRepository repository) {
 		return args -> repository.save(Todo.builder()
 				.name("Walk figgy this afternoon")
-				.done(0)
+				.done(1)
 				.build());
 	}
-
 }

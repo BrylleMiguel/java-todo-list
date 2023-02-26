@@ -7,6 +7,10 @@
         <title>Home</title>
     </head>
     <body>
-        <code th:text="${message}"></code>
+        <form method="POST"></form>
+        <div th:each=" todo: ${todo_list}">
+            <p th:text="${todo.name}"></p>
+            <p th:text="${todo.done == 1} ? 'done' : 'not done'"></p>
+        </div>
     </body>
 </html>
