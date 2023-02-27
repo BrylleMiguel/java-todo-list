@@ -7,10 +7,12 @@
         <title>Home</title>
     </head>
     <body>
-        <form method="POST"></form>
+        <form method="POST" th:object="${todo}">
+            <input type="text" th:field="*{name}" />
+            <input type="submit" value="submit" />
+        </form>
         <div th:each=" todo: ${todo_list}">
             <p th:text="${todo.name}"></p>
-            <p th:text="${todo.done == 1} ? 'done' : 'not done'"></p>
         </div>
     </body>
 </html>
