@@ -13,10 +13,8 @@ import com.todo.list.model.Todo;
 import com.todo.list.repository.TodoListRepository;
 
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Slf4j
 @RequestMapping("/home")
 public class HomeController {
 
@@ -26,13 +24,6 @@ public class HomeController {
     @ModelAttribute
     public Todo todo() {
         return Todo.builder().build();
-    }
-
-    @ModelAttribute
-    public void renderTodoList(Model m) {
-        var todoList = todoListRepository.findAll();
-        m.addAttribute("todo_list", todoList);
-        log.info("todo list converted", todoList);
     }
 
     @GetMapping
